@@ -173,7 +173,7 @@ def main():
     # Initialize the IPBTL algorithm
     pbtl = IPBTL_RDHEI(L=3, key=42)
     
-    msg = "PBTL-RDHEI Secret Message Extraction Test."
+    msg = "TULIPS ARE BEAUTIFUL! 🌷🌷🌷"
     
     image_files = list(assets_dir.glob("*"))
     if not image_files:
@@ -181,7 +181,7 @@ def main():
         return
 
     for img_path in assets_dir.glob("*"):
-        if img_path.suffix.lower() in ['.jpg', '.jpeg', '.png', '.bmp']:
+        if img_path.suffix.lower() in ['.jpg', '.jpeg', '.png', '.bmp', '.webp']:
             # Save as PNG to ensure lossless preservation of LSBs
             save_path = encrypted_dir / (img_path.stem + ".png")
             pbtl.process_image(img_path, save_path, msg)
